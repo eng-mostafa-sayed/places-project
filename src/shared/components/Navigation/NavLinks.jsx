@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import "../../../css/shared/components/Navigation/";
+import "../../../css/shared/components/Navigation/NavLinks.css";
 
 const NavLinks = (props) => {
   return (
