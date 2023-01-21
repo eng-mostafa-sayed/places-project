@@ -32,7 +32,13 @@
 }
 
 .user-item:hover h2,
-.user-item:active h2 .user-item:hover h3,
+.user-item:active h2,
+.user-item:hover h3,
 .user-item:active h3 {
-  color: #292929;
+  color: #292929 !important;
+}
+
+.user-item a:hover,
+.user-item a:active {
+  background: #ffd900;
 }
