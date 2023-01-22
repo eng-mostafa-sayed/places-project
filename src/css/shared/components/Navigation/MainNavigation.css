@@ -9,7 +9,6 @@
   margin-right: 2rem;
   cursor: pointer;
 }
-
 .main-navigation__menu-btn span {
   display: block;
   width: 3rem;
@@ -20,7 +19,6 @@
 .main-navigation__title {
   color: white;
 }
-
 .main-navigation__title a {
   text-decoration: none;
   color: white;
