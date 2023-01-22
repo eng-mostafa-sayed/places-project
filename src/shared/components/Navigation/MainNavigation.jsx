@@ -5,6 +5,7 @@ import MainHeader from "./MainHeader";
 import NavLinks from "./NavLinks";
 import "../../../css/shared/components/Navigation/MainNavigation.css";
 import SideDrawer from "./SideDrawer";
+import Backdrop from "../UIElements/Backdrop";
 
 const MainNavigation = (props) => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
@@ -12,11 +13,14 @@ const MainNavigation = (props) => {
   const openDrawer = () => {
     setDrawerIsOpen(true);
   };
+
   const closeDrawer = () => {
     setDrawerIsOpen(false);
   };
+
   return (
-    <Fragment>
+    <React.Fragment>
+      {drawerIsOpen && <Backdrop onClick={closeDrawer} />}
       {drawerIsOpen && (
         <SideDrawer>
           <nav className="main-navigation__drawer-nav">
@@ -37,7 +41,7 @@ const MainNavigation = (props) => {
           <NavLinks />
         </nav>
       </MainHeader>
-    </Fragment>
+    </React.Fragment>
   );
 };
 
