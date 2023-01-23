@@ -5,7 +5,7 @@ import Button from "../../shared/components/FormElements/Button";
 import {
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
-} from "../../shared/components/util/validator";
+} from "../../shared/util/validator";
 
 import "../../css/places/pages/NewPlace.css";
 
@@ -41,6 +41,10 @@ const NewPlace = () => {
         isValid: false,
       },
       description: {
+        value: "",
+        isValid: false,
+      },
+      address: {
         value: "",
         isValid: false,
       },
