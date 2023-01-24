@@ -14,7 +14,7 @@ const PlaceItem = (props) => {
   const closeMapHandler = () => setShowMap(false);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Modal
         show={showMap}
         onCancel={closeMapHandler}
@@ -46,7 +46,7 @@ const PlaceItem = (props) => {
           </div>
         </Card>
       </li>
-    </React.Fragment>
+    </Fragment>
   );
 };
 
