@@ -13,6 +13,7 @@ const Button = (props) => {
           props.success && "button--success"
         }`}
         href={props.href}
+        style={props.style}
       >
         {props.children}
       </a>
@@ -28,6 +29,7 @@ const Button = (props) => {
         } ${props.danger && "button--danger"}${
           props.success && "button--success"
         }`}
+        style={props.style}
       >
         {props.children}
       </Link>
@@ -43,6 +45,7 @@ const Button = (props) => {
       type={props.type}
       onClick={props.onClick}
       disabled={props.disabled}
+      style={props.style}
     >
       {props.children}
     </button>
