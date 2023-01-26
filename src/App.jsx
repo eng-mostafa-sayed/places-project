@@ -18,7 +18,7 @@ const App = () => {
   const logout = useCallback(() => {
     setIsLoggedIn(false);
   }, []);
-  //manging authentication state
+  //managing authentication state
   let routes = <Fragment>new</Fragment>;
 
   if (isLoggedIn) {
