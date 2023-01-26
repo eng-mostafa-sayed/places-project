@@ -4,7 +4,7 @@ import UsersList from "../components/usersList";
 const Users = () => {
   const USERS = [
     {
-      id: "1",
+      id: "u1",
       name: "John",
       email: "john@gmail.com",
       places: 3,

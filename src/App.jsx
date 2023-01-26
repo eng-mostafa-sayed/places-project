@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, Fragment } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Users from "./user/pages/Users";
@@ -18,22 +18,37 @@ const App = () => {
   const logout = useCallback(() => {
     setIsLoggedIn(false);
   }, []);
-//manging authentication state
+  //manging authentication state
+  let routes = <Fragment>new</Fragment>;
+
+  if (isLoggedIn) {
+    routes = (
+      <Fragment>
+        <Routes>
+          <Route path="/places/new" element={<NewPlace />} exact />
+          <Route path="/places/:placeId" element={<UpdatePlace />} exact />
+          <Route path="/:userId/places" element={<UserPlaces />} exact />
+        </Routes>
+      </Fragment>
+    );
+  } else {
+    routes = (
+      <Fragment>
+        <Routes>
+          <Route path="/" element={<Users />} exact />
+          <Route path="/:userId/places" element={<UserPlaces />} exact />
+          <Route path="/auth" element={<Auth />} exact />
+        </Routes>
+      </Fragment>
+    );
+  }
   return (
     <AuthContext.Provider
       value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}
     >
       <BrowserRouter>
         <MainNavigation />
-        <main>
-          <Routes>
-            <Route path="/" element={<Users />} exact />
-            <Route path="/:userId/places" element={<UserPlaces />} exact />
-            <Route path="/places/new" element={<NewPlace />} exact />
-            <Route path="/places/:placeId" element={<UpdatePlace />} exact />
-            <Route path="/auth" element={<Auth />} exact />
-          </Routes>
-        </main>
+        <main>{routes}</main>
       </BrowserRouter>
     </AuthContext.Provider>
   );
